@@ -20,7 +20,7 @@ class BookViewSet(viewsets.ModelViewSet):
     queryset = Book.objects.all()       # Define the queryset for the viewset (all books)
     serializer_class = BookSerializer   # Specify the serializer to use for book objects
     permission_classes = [UnauthenticatedListPermission]  # Apply the custom permission class
-    filterset_class = BookFilter        # Apply the custom filter for book objects
+    filterset_class = BookFilter   # Apply the custom filter for book objects
 
 
 # Define a viewset for the Author model

@@ -36,6 +36,8 @@ class Book(models.Model):
     condition = models.ForeignKey(Condition, related_name='books_condition', on_delete=models.CASCADE)
     owner = models.ForeignKey(User, related_name='books_owned', on_delete=models.CASCADE)
     location = models.CharField(max_length=200)
+
+    available = models.BooleanField(default=True)  # Add an availability field
     
     def __str__(self):
         return self.title

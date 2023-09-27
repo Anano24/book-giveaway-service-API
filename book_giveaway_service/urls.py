@@ -18,11 +18,13 @@ from django.contrib import admin
 from django.urls import path, include
 from .views import UserCreateView, CurrentUserView
 from rest_framework.authtoken.views import obtain_auth_token
+from bookHub.views import TakeBookView, ReturnBookView  
 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('books.urls')),
+    path('', include('bookHub.urls')),  # Include URLs from my app
     path('users/', UserCreateView.as_view(), name="user-create"),
     path('login/', obtain_auth_token, name='login'),
     path('users/me/', CurrentUserView.as_view(), name="current-user")
