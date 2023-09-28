@@ -1,6 +1,6 @@
 from rest_framework import viewsets, permissions
 from .models import Book, Genre, Condition, Author
-from .serializers import BookSerializer, AuthorSerializer, GenreSerializer, ConditionSerializer
+from .serializers import BookSerializer, AuthorSerializer, GenreSerializer, ConditionSerializer, AvailableBookSerializer
 from .filters import BookFilter
 
 
@@ -17,10 +17,21 @@ class UnauthenticatedListPermission(permissions.BasePermission):
 
 # Define a viewset for the Book model
 class BookViewSet(viewsets.ModelViewSet):
-    queryset = Book.objects.all()       # Define the queryset for the viewset (all books)
     serializer_class = BookSerializer   # Specify the serializer to use for book objects
-    permission_classes = [UnauthenticatedListPermission]  # Apply the custom permission class
+    permission_classes = [permissions.IsAuthenticated]  # Restrict access to authenticated users only
     filterset_class = BookFilter   # Apply the custom filter for book objects
+
+    def get_queryset(self):
+        # Filter the queryset to show only books owned by the currently logged-in user
+        return Book.objects.filter(owner=self.request.user)
+
+
+# Define a viewset for available books
+class AvailableBookViewSet(viewsets.ReadOnlyModelViewSet):
+    queryset = Book.objects.filter(available=True)  # Filter books that are available
+    serializer_class = AvailableBookSerializer  # Use the custom serializer
+    permission_classes = [UnauthenticatedListPermission]  # Allow unauthenticated users to access
+
 
 
 # Define a viewset for the Author model
