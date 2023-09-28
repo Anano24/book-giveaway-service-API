@@ -31,6 +31,7 @@ class AvailableBookViewSet(viewsets.ReadOnlyModelViewSet):
     queryset = Book.objects.filter(available=True)  # Filter books that are available
     serializer_class = AvailableBookSerializer  # Use the custom serializer
     permission_classes = [UnauthenticatedListPermission]  # Allow unauthenticated users to access
+    filterset_class = BookFilter   # Apply the custom filter for book objects
 
 
 
