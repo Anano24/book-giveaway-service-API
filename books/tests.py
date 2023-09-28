@@ -107,7 +107,7 @@ class SerializerTestCase(TestCase):
 
 
 
-class BookViewTestCase(TestCase):
+class AvailableBookTestCase(TestCase):
     def setUp(self):
         self.user = User.objects.create(username='testuser')
         self.author = Author.objects.create(name='Test Author')
@@ -123,10 +123,11 @@ class BookViewTestCase(TestCase):
         self.book.genre.set([self.genre])
 
     def test_book_list_view(self):
-        response = self.client.get('/books/')  
+        response = self.client.get('/available-books/')  
         self.assertEqual(response.status_code, 200)
 
 
+    
 
 class AuthorViewSetTestCase(APITestCase):
     def setUp(self):
