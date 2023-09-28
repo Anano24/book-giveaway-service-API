@@ -34,7 +34,7 @@ class Book(models.Model):
     author = models.ForeignKey(Author, related_name='books_written', on_delete=models.CASCADE)
     genre = models.ManyToManyField(Genre, related_name='books')
     condition = models.ForeignKey(Condition, related_name='books_condition', on_delete=models.CASCADE)
-    owner = models.ForeignKey(User, related_name='books_owned', on_delete=models.CASCADE)
+    owner = models.ForeignKey(User, related_name='books_owned', on_delete=models.CASCADE, null=True)
     location = models.CharField(max_length=200)
 
     available = models.BooleanField(default=True)  # Add an availability field

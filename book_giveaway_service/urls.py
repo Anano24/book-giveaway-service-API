@@ -27,5 +27,6 @@ urlpatterns = [
     path('', include('bookHub.urls')),  # Include URLs from my app
     path('users/', UserCreateView.as_view(), name="user-create"),
     path('login/', obtain_auth_token, name='login'),
-    path('users/me/', CurrentUserView.as_view(), name="current-user")
+    path('users/me/', CurrentUserView.as_view(), name="current-user"),
+    
 ]
