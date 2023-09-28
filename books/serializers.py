@@ -8,6 +8,10 @@ class BookSerializer(serializers.ModelSerializer):
         model = Book  # Specify the model that this serializer is associated with
         fields = '__all__'  # Include all fields from the model in the serialized representation
 
+class AvailableBookSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Book
+        fields = '__all__'
 
 # Define a serializer for the Author model
 class AuthorSerializer(serializers.ModelSerializer):
