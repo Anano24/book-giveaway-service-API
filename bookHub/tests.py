@@ -18,7 +18,8 @@ class BookHubAPITest(APITestCase):
             title='Test Book',
             author=self.author,
             condition=self.condition,
-            location='Library'
+            location='Library',
+            cover_image='media/book_cover/image.jpg'  # Specify the path to your cover image
         )
         self.book.genre.add(self.genre)
         self.book.owner = self.user

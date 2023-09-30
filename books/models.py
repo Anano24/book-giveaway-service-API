@@ -36,8 +36,11 @@ class Book(models.Model):
     condition = models.ForeignKey(Condition, related_name='books_condition', on_delete=models.CASCADE)
     owner = models.ForeignKey(User, related_name='books_owned', on_delete=models.CASCADE, null=True)
     location = models.CharField(max_length=200)
+    # Add an availability field
+    available = models.BooleanField(default=True)  
+    # Add an image field for cover image
+    cover_image = models.ImageField(upload_to='book_covers/', null=True, blank=True)
 
-    available = models.BooleanField(default=True)  # Add an availability field
     
     def __str__(self):
         return self.title

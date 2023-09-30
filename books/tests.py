@@ -18,7 +18,8 @@ class ModelTestCase(TestCase):
             author=self.author,
             location='Library',
             condition=self.condition,
-            owner=self.user
+            owner=self.user,
+            cover_image='media/book_cover/image.jpg'  # Specify the path to your cover image
         )
         # self.book.genre.add(self.genre)
         self.book.genre.set([self.genre])
@@ -56,6 +57,7 @@ class SerializerTestCase(TestCase):
             'condition': condition.pk,  # Assign the primary key of the Condition object
             'owner': None,
             'available': True,
+            'cover_image': None
         }
 
         serializer = BookSerializer(data=book_data)
@@ -118,7 +120,8 @@ class AvailableBookTestCase(TestCase):
             author=self.author,
             location='Library',
             condition=self.condition,
-            owner=self.user
+            owner=self.user,
+            cover_image='media/book_cover/image.jpg' 
         )
         self.book.genre.set([self.genre])
 

@@ -2,7 +2,7 @@
 # ___Book Giveaway Service API___
 
 
-This README provides instructions for setting up and running the Book Giveaway Service API project. The project is built using Django 4.2.3 and provides an API for managing books, authors, genres, conditions, and user accounts. Users can create accounts, list available books, take books, and return books.
+This README provides instructions for setting up and running the Book Giveaway Service API project. The project is built using Django 4.2.3 and provides an API for managing books, authors, genres, conditions, cover images, and user accounts. Users can create accounts, list available books, take books, and return books.
 
 
 
@@ -24,7 +24,7 @@ This README provides instructions for setting up and running the Book Giveaway S
 The project structure is organized as follows:
 
 - **book_giveaway_service**: The main project folder.
-  - **books**: Contains models and serializers for books, authors, genres, conditions, and user accounts.
+  - **books**: Contains models and serializers for books, authors, genres, conditions, cover images, and user accounts.
   - **bookHub**: Contains views and URL patterns for taking and returning books.
   - **db.sqlite3**: The SQLite database file.
 
