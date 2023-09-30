@@ -1,0 +1,24 @@
+version: '3'
+
+services:
+  web:
+    build: .
+    command: python manage.py runserver 0.0.0.0:8000
+    volumes:
+      - .:/app
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db
+    environment:
+      DEBUG: "true"  # Set DEBUG to "true" for development purposes
+      SECRET_KEY: 'django-insecure-)7kmqc$qquc8f$-o$o&^&z=+582p1a4l3s7*y8f31#%t0*&dvf'  # Actual secret key
+      DJANGO_DB_HOST: db
+      DJANGO_DB_NAME: /app/db.sqlite3
+      DJANGO_DB_USER: ''
+      DJANGO_DB_PASSWORD: ''
+
+  db:
+    image: keinos/sqlite3:latest  # Use the official SQLite image
+    volumes:
+      - ./data:/var/lib/sqlite
