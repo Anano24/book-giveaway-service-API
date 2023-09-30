@@ -36,9 +36,9 @@ The project structure is organized as follows:
 Follow these steps to set up the project:
 
 1. **Clone the repository:**
-    `git clone https://github.com/Anano24/your-repo.git`
+    `git clone https://github.com/Anano24/book-giveaway-service-API.git`
 2. **Navigate to the project directory:**
-    `cd book_giveaway_service`
+    `cd book-giveaway-service-API`
 3. **Create a virtual environment (optional but recommended):**
     `python -m venv venv`
 4. **Activate the virtual environment:**
@@ -122,8 +122,8 @@ Follow these steps to run the project using Docker:
 
 1. **Clone the repository:**
    ```bash
-   git clone https://github.com/Anano24/your-repo.git
-   cd book_giveaway_service
+   git clone https://github.com/Anano24/book-giveaway-service-API.git
+   cd book-giveaway-service-API
 2. **Create a Docker image:**
     `docker build -t book-giveaway-service .`
 3. **Run the Docker container:**
@@ -136,8 +136,8 @@ Alternatively, you can use Docker Compose to manage the project's containers. He
 
 1. **Clone the repository:**
    ```bash
-   git clone https://github.com/Anano24/your-repo.git
-   cd book_giveaway_service
+   git clone https://github.com/Anano24/book-giveaway-service-API.git
+   cd book-giveaway-service-API
 2. **Build and start the containers:**
     `docker-compose up`
 The development server will start running at [http://localhost:8000/](http://localhost:8000/).
