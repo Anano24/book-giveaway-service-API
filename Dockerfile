@@ -1,5 +1,5 @@
 # Use an official Python runtime as a parent image
-FROM python:3.8
+FROM python:3.12.11
 
 # Set environment variables for Django
 ENV PYTHONDONTWRITEBYTECODE 1
